@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CamNet VPN</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#07111f;
+  color:white;
+}
+header{
+  padding:25px 20px;
+  text-align:center;
+  background:#101e32;
+}
+header h1{color:#00d4ff;margin:0}
+header p{color:#a8b8cc}
+.container{padding:20px;max-width:500px;margin:auto}
+.card{
+  background:#13233a;
+  padding:18px;
+  border-radius:16px;
+  margin-bottom:18px;
+}
+button{
+  background:#00d4ff;
+  color:#07111f;
+  border:none;
+  padding:14px;
+  border-radius:10px;
+  width:100%;
+  font-weight:bold;
+  margin-top:10px;
+}
+input{
+  width:100%;
+  padding:13px;
+  margin:8px 0;
+  border-radius:9px;
+  border:none;
+}
+.plan{
+  border:1px solid #30445f;
+  padding:14px;
+  border-radius:12px;
+  margin:10px 0;
+}
+.price{color:#00d4ff;font-weight:bold}
+.small{color:#a8b8cc;font-size:13px}
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>CamNet VPN</h1>
+<p>Votre accès, votre liberté</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Bienvenue</h2>
+<p>Découvrez nos offres de connexion.</p>
+<button onclick="show('plans')">Voir les forfaits</button>
+<button onclick="show('register')">Créer un compte</button>
+<button onclick="show('login')">Se connecter</button>
+</div>
+
+<div id="plans" class="card hidden">
+<h2>Nos forfaits</h2>
+
+<div class="plan">1 Go <span class="price">200 FCFA</span><br>24 heures</div>
+<div class="plan">4 Go <span class="price">600 FCFA</span><br>3 jours</div>
+<div class="plan">7 Go <span class="price">1 000 FCFA</span><br>7 jours</div>
+<div class="plan">15 Go <span class="price">3 500 FCFA</span><br>15 jours</div>
+<div class="plan">25 Go <span class="price">5 000 FCFA</span><br>30 jours</div>
+<div class="plan">Illimité <span class="price">10 000 FCFA</span><br>30 jours</div>
+<div class="plan">Illimité <span class="price">25 000 FCFA</span><br>65 jours</div>
+
+<button onclick="show('home')">Retour</button>
+</div>
+
+<div id="register" class="card hidden">
+<h2>Inscription</h2>
+<input id="name" placeholder="Votre nom">
+<input id="phone" placeholder="Votre numéro de téléphone">
+<input id="password" type="password" placeholder="Créer un mot de passe">
+<button onclick="register()">Créer mon compte</button>
+<button onclick="show('home')">Retour</button>
+</div>
+
+<div id="login" class="card hidden">
+<h2>Connexion</h2>
+<input id="loginphone" placeholder="Numéro de téléphone">
+<input id="loginpassword" type="password" placeholder="Mot de passe">
+<button onclick="alert('La connexion sera activée dans une prochaine étape.')">Se connecter</button>
+<button onclick="show('home')">Retour</button>
+</div>
+
+<div id="account" class="card hidden">
+<h2>Mon compte</h2>
+<div id="userInfo"></div>
+<button onclick="show('home')">Accueil</button>
+</div>
+
+<div class="card">
+<h3>🎁 Bonus de bienvenue</h3>
+<p>1 Go offert pour 24 heures, sous réserve d'activation du service.</p>
+</div>
+
+<p class="small" style="text-align:center">
+CamNet VPN · Service en préparation
+</p>
+
+</div>
+
+<script>
+function show(id){
+  document
